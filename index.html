@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untuk Kamu</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    background:#f5f5f5;
+    margin:0;
+}
+
+#question{
+    margin-top:150px;
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.gallery{
+    display:none;
+    padding:30px;
+}
+
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    margin-top:2%;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="question">
+    <h1>Aku minta maaf, dimaafkan tidak?</h1>
+
+    <button onclick="showGallery()">
+        Dimaafkan
+    </button>
+
+    <button onclick="showGallery()">
+        Dimaafkan Sayangku ❤️
+    </button>
+</div>
+
+<div class="gallery" id="gallery">
+
+    <h2>Terima kasih ❤️</h2>
+
+    <img src="foto1.jpg" onclick="openImg(this.src)">
+    <img src="foto2.jpg" onclick="openImg(this.src)">
+    <img src="foto3.jpg" onclick="openImg(this.src)">
+    <img src="foto4.jpg" onclick="openImg(this.src)">
+    <img src="foto5.jpg" onclick="openImg(this.src)">
+
+</div>
+
+<div class="modal" id="modal">
+
+    <span class="close" onclick="closeImg()">&times;</span>
+
+    <img id="modalImg">
+
+</div>
+
+<script>
+
+function showGallery(){
+    document.getElementById("question").style.display="none";
+    document.getElementById("gallery").style.display="block";
+}
+
+function openImg(src){
+    document.getElementById("modal").style.display="block";
+    document.getElementById("modalImg").src=src;
+}
+
+function closeImg(){
+    document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
