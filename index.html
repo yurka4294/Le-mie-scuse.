@@ -1,51 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Untuk Kamu ❤️</title>
+<title>Untuk Kamu</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    margin:0;
     font-family:Arial, sans-serif;
-    background:#f5f5f5;
+    color:white;
     text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
 }
 
 #question{
-    height:100vh;
+    min-height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:40px;
+    max-width:600px;
+    width:100%;
 }
 
 h1{
-    margin-bottom:30px;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    margin-bottom:25px;
 }
 
 button{
     padding:15px 30px;
     margin:10px;
     border:none;
-    border-radius:12px;
+    border-radius:15px;
     cursor:pointer;
     font-size:16px;
     transition:0.3s;
+    background:white;
 }
 
 button:hover{
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
 .gallery{
     display:none;
-    padding:30px;
+    padding:40px 20px;
 }
 
 .gallery h2{
+    margin-bottom:10px;
+}
+
+.gallery p{
     margin-bottom:30px;
 }
 
@@ -63,6 +99,7 @@ button:hover{
     border-radius:15px;
     cursor:pointer;
     transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
 .gallery img:hover{
@@ -77,7 +114,6 @@ button:hover{
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.9);
-    z-index:999;
 }
 
 .modal img{
@@ -89,24 +125,29 @@ button:hover{
 .close{
     position:absolute;
     top:20px;
-    right:35px;
-    color:white;
-    font-size:40px;
+    right:30px;
+    font-size:45px;
     cursor:pointer;
 }
 
 .footer{
     margin-top:40px;
-    color:#666;
 }
-
 </style>
+
 </head>
 
 <body>
 
 <div id="question">
+    <div class="card">
+
+```
     <h1>Aku minta maaf, dimaafkan tidak?</h1>
+
+    <div class="subtitle">
+        Pilih salah satu jawaban di bawah ini.
+    </div>
 
     <button onclick="showGallery()">
         Dimaafkan
@@ -115,33 +156,45 @@ button:hover{
     <button onclick="showGallery()">
         Dimaafkan Sayangku ❤️
     </button>
+
+</div>
+```
+
 </div>
 
 <div class="gallery" id="gallery">
 
-    <h2>Terima kasih sudah membuka halaman ini ❤️</h2>
+```
+<h2>Terima Kasih ❤️</h2>
 
-    <div class="gallery-container">
+<p>
+    Sudah meluangkan waktu membuka halaman ini.
+</p>
 
-        <img src="foto1.jpg" onclick="openImg(this.src)">
-        <img src="foto2.jpg" onclick="openImg(this.src)">
-        <img src="foto3.jpg" onclick="openImg(this.src)">
-        <img src="foto4.jpg" onclick="openImg(this.src)">
-        <img src="foto5.jpg" onclick="openImg(this.src)">
+<div class="gallery-container">
 
-    </div>
+    <img src="foto1.jpg" onclick="openImg(this.src)">
+    <img src="foto2.jpg" onclick="openImg(this.src)">
+    <img src="foto3.jpg" onclick="openImg(this.src)">
+    <img src="foto4.jpg" onclick="openImg(this.src)">
+    <img src="foto5.jpg" onclick="openImg(this.src)">
 
-    <div class="footer">
-        Kenangan yang selalu ingin aku jaga.
-    </div>
+</div>
+
+<div class="footer">
+    Kenangan yang selalu ingin aku jaga.
+</div>
+```
 
 </div>
 
 <div class="modal" id="modal">
 
-    <span class="close" onclick="closeImg()">&times;</span>
+```
+<span class="close" onclick="closeImg()">&times;</span>
 
-    <img id="modalImg">
+<img id="modalImg">
+```
 
 </div>
 
